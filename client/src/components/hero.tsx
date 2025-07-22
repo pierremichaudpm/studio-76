@@ -1,4 +1,5 @@
 import studioLogoPath from "@assets/studio76-Logo_1753218097982.png";
+import productionHomePath from "@assets/production_home_1753218097983.jpeg";
 
 export default function Hero() {
   return (
@@ -8,19 +9,18 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')",
+          backgroundImage: `url(${productionHomePath})`,
         }}
       ></div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         {/* Studio 76 Logo */}
-        <div className="mb-8 animate-fade-in-down">
+        <div className="mb-12 animate-fade-in-down">
           <img
             src={studioLogoPath}
             alt="Studio 76 Logo"
-            className="w-64 md:w-80 h-auto mx-auto"
+            className="w-96 md:w-[500px] lg:w-[600px] h-auto mx-auto"
           />
         </div>
 
