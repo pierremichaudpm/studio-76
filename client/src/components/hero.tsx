@@ -20,7 +20,7 @@ export default function Hero() {
           <img
             src={studioLogoPath}
             alt="Studio 76 Logo"
-            className="w-96 md:w-[500px] lg:w-[600px] h-auto mx-auto"
+            className="w-72 md:w-[350px] lg:w-[420px] h-auto mx-auto"
           />
         </div>
 
