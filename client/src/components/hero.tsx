@@ -5,14 +5,14 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-studio-blue/80 via-blue-900/90 to-black/95"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-studio-blue/56 via-blue-900/63 to-black/67"></div>
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{
           backgroundImage: `url(${productionHomePath})`,
         }}
       ></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-studio-blue/40"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/42 via-transparent to-studio-blue/28"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
