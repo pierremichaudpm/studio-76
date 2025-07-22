@@ -15,7 +15,7 @@ export default function Contact() {
     {
       icon: MapPin,
       title: "Localisation",
-      info: "Québec, Canada",
+      info: "Longueuil, Québec, Canada",
     },
   ];
 
