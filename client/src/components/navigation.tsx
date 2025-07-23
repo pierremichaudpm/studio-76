@@ -38,8 +38,8 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
         isScrolled
-          ? "bg-black/95 backdrop-blur-lg border-b border-gray-800"
-          : "bg-transparent"
+          ? "bg-gradient-to-b from-black/95 via-black/90 to-transparent backdrop-blur-lg border-b border-gray-800"
+          : "bg-gradient-to-b from-black/40 via-black/20 to-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -95,32 +95,30 @@ export default function Navigation() {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div
-        className={`md:hidden fixed inset-x-0 top-20 bg-black/95 backdrop-blur-lg border-t border-gray-800 transform transition-transform duration-300 z-40 ${
-          isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <div className="px-6 py-8 space-y-6">
-          <button
-            onClick={() => scrollToSection("services")}
-            className="block text-lg hover:text-studio-blue transition-colors duration-300"
-          >
-            Vision
-          </button>
-          <button
-            onClick={() => scrollToSection("team")}
-            className="block text-lg hover:text-studio-blue transition-colors duration-300"
-          >
-            Équipe
-          </button>
-          <button
-            onClick={() => scrollToSection("contact")}
-            className="block text-lg hover:text-studio-blue transition-colors duration-300"
-          >
-            Nous joindre
-          </button>
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed inset-x-0 top-20 bg-black/95 backdrop-blur-lg border-t border-gray-800 z-40 animate-in slide-in-from-top duration-300">
+          <div className="px-6 py-8 space-y-6">
+            <button
+              onClick={() => scrollToSection("services")}
+              className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
+            >
+              Vision
+            </button>
+            <button
+              onClick={() => scrollToSection("team")}
+              className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
+            >
+              Équipe
+            </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
+            >
+              Nous joindre
+            </button>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
