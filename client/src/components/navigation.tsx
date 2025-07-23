@@ -22,20 +22,7 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      const nav = document.querySelector('nav');
-      
-      if (isMobileMenuOpen && nav && !nav.contains(target)) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-    
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [isMobileMenuOpen]);
+
 
   return (
     <nav
@@ -84,8 +71,8 @@ export default function Navigation() {
           {/* Mobile menu button - upper right */}
           <div className="md:hidden z-50">
             <button
-              onClick={(e) => {
-                e.stopPropagation();
+              onClick={() => {
+                console.log('Burger clicked, current state:', isMobileMenuOpen);
                 setIsMobileMenuOpen(!isMobileMenuOpen);
               }}
               className="p-2 text-white hover:text-studio-blue focus:outline-none transition-colors duration-200 bg-transparent"
@@ -102,22 +89,31 @@ export default function Navigation() {
 
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-x-0 top-20 bg-black/95 backdrop-blur-lg border-t border-gray-800 z-40 animate-in slide-in-from-top duration-300">
+        <div className="md:hidden fixed inset-x-0 top-20 bg-black/95 backdrop-blur-lg border-t border-gray-800 z-40">
           <div className="px-6 py-8 space-y-6">
             <button
-              onClick={() => scrollToSection("services")}
+              onClick={() => {
+                console.log('Vision clicked');
+                scrollToSection("services");
+              }}
               className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
             >
               Vision
             </button>
             <button
-              onClick={() => scrollToSection("team")}
+              onClick={() => {
+                console.log('Équipe clicked');
+                scrollToSection("team");
+              }}
               className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
             >
               Équipe
             </button>
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => {
+                console.log('Nous joindre clicked');
+                scrollToSection("contact");
+              }}
               className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
             >
               Nous joindre
