@@ -46,7 +46,7 @@ export default function Navigation() {
                 onClick={() => scrollToSection("services")}
                 className="hover:text-studio-blue transition-colors duration-300 relative group"
               >
-                Services
+                Vision
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-studio-blue transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
@@ -93,7 +93,7 @@ export default function Navigation() {
             onClick={() => scrollToSection("services")}
             className="block text-lg hover:text-studio-blue transition-colors duration-300"
           >
-            Services
+            Vision
           </button>
           <button
             onClick={() => scrollToSection("team")}
