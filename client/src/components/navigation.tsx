@@ -32,9 +32,9 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo - Always visible */}
-          <div className="flex-shrink-0">
-            <div className="text-2xl font-bold text-white">
+          {/* Logo - Always visible in upper left */}
+          <div className="flex-shrink-0 z-50">
+            <div className="text-xl md:text-2xl font-bold text-white">
               STUDIO <span className="text-studio-blue">76</span>
             </div>
           </div>
@@ -66,16 +66,16 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button - upper right */}
+          <div className="md:hidden z-50">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-white hover:text-studio-blue focus:outline-none transition-colors duration-200"
+              className="p-2 text-white hover:text-studio-blue focus:outline-none transition-colors duration-200 bg-transparent"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 stroke-2" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 stroke-2" />
               )}
             </button>
           </div>
