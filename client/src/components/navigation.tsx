@@ -24,8 +24,11 @@ export default function Navigation() {
 
   // Close mobile menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = () => {
-      if (isMobileMenuOpen) {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      const nav = document.querySelector('nav');
+      
+      if (isMobileMenuOpen && nav && !nav.contains(target)) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -81,7 +84,10 @@ export default function Navigation() {
           {/* Mobile menu button - upper right */}
           <div className="md:hidden z-50">
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMobileMenuOpen(!isMobileMenuOpen);
+              }}
               className="p-2 text-white hover:text-studio-blue focus:outline-none transition-colors duration-200 bg-transparent"
             >
               {isMobileMenuOpen ? (
