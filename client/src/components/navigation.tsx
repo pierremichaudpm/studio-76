@@ -22,6 +22,18 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      if (isMobileMenuOpen) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMobileMenuOpen]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
@@ -84,7 +96,7 @@ export default function Navigation() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden fixed inset-x-0 top-20 bg-black/95 backdrop-blur-lg border-t border-gray-800 transform transition-transform duration-300 ${
+        className={`md:hidden fixed inset-x-0 top-20 bg-black/95 backdrop-blur-lg border-t border-gray-800 transform transition-transform duration-300 z-40 ${
           isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >
