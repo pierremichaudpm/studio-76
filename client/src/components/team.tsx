@@ -10,6 +10,7 @@ export default function Team() {
       name: t('team.sebastien.name'),
       title: t('team.sebastien.title'),
       photo: sebastienPhoto,
+      photoStyle: "object-top", // Position to show more of the head
       bio: [
         t('team.sebastien.bio1'),
         t('team.sebastien.bio2'),
@@ -20,6 +21,7 @@ export default function Team() {
       name: t('team.catherine.name'),
       title: t('team.catherine.title'),
       photo: catherinePhoto,
+      photoStyle: "object-center", // Center and scale up
       bio: [
         t('team.catherine.bio1'),
         t('team.catherine.bio2'),
@@ -48,7 +50,10 @@ export default function Team() {
                 <img 
                   src={member.photo} 
                   alt={member.name}
-                  className="w-full h-full object-cover object-center"
+                  className={`w-full h-full object-cover ${member.photoStyle}`}
+                  style={{
+                    transform: member.name.includes('Catherine') ? 'scale(1.15)' : 'translateY(8px)'
+                  }}
                 />
               </div>
               <h3 className="text-2xl font-medium text-center mb-2">
