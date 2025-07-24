@@ -2,7 +2,7 @@ import { Film, Radio, Users } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Services() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const services = [
     {
       icon: Film,
@@ -29,7 +29,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light mb-6">
-            Notre <span className="text-studio-blue">{t('vision.title.highlight')}</span>
+            {language === 'fr' ? 'Notre' : 'Our'} <span className="text-studio-blue">{t('vision.title.highlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-studio-blue to-blue-600 mx-auto"></div>
         </div>
