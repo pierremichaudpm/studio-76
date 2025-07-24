@@ -1,5 +1,5 @@
 import studioLogoPath from "@assets/studio76-Logo_1753218097982.png";
-import productionHomePath from "@assets/production_home_1753218097983.jpeg";
+import cyclingEventPath from "@assets/Corpo - GPCQM - 15-09-2024 - Simon Laroche - Montréal_WEB-719_1753362028332.jpg";
 
 export default function Hero() {
   return (
@@ -9,7 +9,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{
-          backgroundImage: `url(${productionHomePath})`,
+          backgroundImage: `url(${cyclingEventPath})`,
         }}
       ></div>
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-studio-blue/20"></div>
