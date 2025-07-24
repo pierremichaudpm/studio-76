@@ -53,8 +53,8 @@ export default function Team() {
                   className={`w-full h-full object-cover ${member.photoStyle}`}
                   style={{
                     transform: member.name.includes('Catherine') 
-                      ? 'scale(1.15) translateX(6px)' 
-                      : 'translateY(-4px)'
+                      ? 'scale(1.15) translateX(6px) translateY(2px)' 
+                      : 'translateY(-1px)'
                   }}
                 />
               </div>
