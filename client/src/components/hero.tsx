@@ -5,14 +5,14 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-studio-blue"></div>
+      <div className="absolute inset-0 bg-black"></div>
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30"
+        className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{
           backgroundImage: `url(${cyclingEventPath})`,
         }}
       ></div>
-      <div className="absolute inset-0 bg-studio-blue/20"></div>
+      <div className="absolute inset-0 bg-studio-blue/10"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
