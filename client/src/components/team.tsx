@@ -1,5 +1,7 @@
 import { User } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import sebastienPhoto from "@assets/SEBASTIEN_1753364072922.webp";
+import catherinePhoto from "@assets/catherine_1753364072922.jpeg";
 
 export default function Team() {
   const { t } = useLanguage();
@@ -7,6 +9,7 @@ export default function Team() {
     {
       name: t('team.sebastien.name'),
       title: t('team.sebastien.title'),
+      photo: sebastienPhoto,
       bio: [
         t('team.sebastien.bio1'),
         t('team.sebastien.bio2'),
@@ -16,6 +19,7 @@ export default function Team() {
     {
       name: t('team.catherine.name'),
       title: t('team.catherine.title'),
+      photo: catherinePhoto,
       bio: [
         t('team.catherine.bio1'),
         t('team.catherine.bio2'),
@@ -39,9 +43,13 @@ export default function Team() {
               key={index}
               className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-all duration-500 max-w-4xl mx-auto"
             >
-              {/* Professional headshot placeholder */}
-              <div className="w-32 h-32 bg-gradient-to-br from-studio-blue to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
-                <User className="w-16 h-16 text-white" />
+              {/* Professional headshot */}
+              <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden border-2 border-studio-blue/30">
+                <img 
+                  src={member.photo} 
+                  alt={member.name}
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <h3 className="text-2xl font-medium text-center mb-2">
                 {member.name}
