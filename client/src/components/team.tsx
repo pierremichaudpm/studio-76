@@ -31,11 +31,11 @@ export default function Team() {
           <div className="w-24 h-1 bg-gradient-to-r from-studio-blue to-blue-600 mx-auto"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="space-y-16">
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-all duration-500"
+              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 hover:bg-white/8 transition-all duration-500 max-w-4xl mx-auto"
             >
               {/* Professional headshot placeholder */}
               <div className="w-32 h-32 bg-gradient-to-br from-studio-blue to-blue-600 rounded-full mx-auto mb-6 flex items-center justify-center">
