@@ -13,7 +13,7 @@ export default function Hero() {
         }}
       ></div>
       <div className="absolute inset-0 bg-studio-blue/10"></div>
-      <div className="absolute inset-0 bg-black/20"></div>
+      <div className="absolute inset-0 bg-black/35"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
