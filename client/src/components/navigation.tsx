@@ -71,7 +71,7 @@ export default function Navigation() {
               {/* Language Toggle */}
               <button
                 onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-                className="flex items-center space-x-1 hover:text-studio-blue transition-colors duration-300 relative group"
+                className="flex items-baseline space-x-1 hover:text-studio-blue transition-colors duration-300 relative group"
               >
                 <Globe className="w-4 h-4" />
                 <span className="text-sm font-medium">{t('lang.toggle')}</span>
@@ -122,7 +122,7 @@ export default function Navigation() {
             {/* Mobile Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-              className="flex items-center space-x-2 text-lg text-white hover:text-studio-blue transition-colors duration-300"
+              className="flex items-center justify-start space-x-2 w-full text-lg text-white hover:text-studio-blue transition-colors duration-300"
             >
               <Globe className="w-5 h-5" />
               <span>{t('lang.toggle')}</span>
