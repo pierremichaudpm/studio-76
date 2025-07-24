@@ -4,7 +4,7 @@ export default function Team() {
   const teamMembers = [
     {
       name: "Sébastien Arsenault",
-      title: "Président & Producteur",
+      title: "Président",
       bio: [
         "Sébastien cumule plus de 20 ans d'expérience en production télévisuelle et en gestion de chaînes spécialisées. À la tête de Serdy Média, il a supervisé la production de centaines d'heures de contenu original, notamment pour les chaînes Évasion et Zeste, qu'il a dirigées à titre de président.",
         "Visionnaire, il a piloté le lancement de Zeste en 2010, élargissant l'offre télévisuelle culinaire au Québec avec une programmation originale et distinctive.",
@@ -13,7 +13,7 @@ export default function Team() {
     },
     {
       name: "Catherine Dupont",
-      title: "Productrice Exécutive",
+      title: "Vice-présidente directrice générale",
       bio: [
         "Catherine est une productrice chevronnée qui cumule plus de 35 ans d'expérience dans les secteurs télévisuel, documentaire et événementiel. Elle a dirigé des chaînes spécialisées comme Évasion et Zeste, supervisé la production de séries originales saluées par l'industrie et piloté la couverture olympique multiplateforme de Radio-Canada.",
         "Aujourd'hui à la tête de Studio 76, elle met son expertise en production de séries documentaires, captation d'événements sportifs et projets de contenu de marque au service de partenaires à la recherche d'un récit fort, captivant et bien exécuté.",

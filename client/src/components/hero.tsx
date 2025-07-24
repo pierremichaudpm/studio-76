@@ -32,9 +32,7 @@ export default function Hero() {
             <span className="block mb-2 text-studio-blue">Captiver.</span>
             <span className="block">Connecter.</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mt-8 max-w-2xl mx-auto">
-            L'art de raconter votre histoire en images
-          </p>
+
         </div>
       </div>
 
