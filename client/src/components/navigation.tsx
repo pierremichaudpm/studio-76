@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,21 +50,31 @@ export default function Navigation() {
                 onClick={() => scrollToSection("services")}
                 className="hover:text-studio-blue transition-colors duration-300 relative group"
               >
-                Vision
+                {t('nav.vision')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-studio-blue transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
                 onClick={() => scrollToSection("team")}
                 className="hover:text-studio-blue transition-colors duration-300 relative group"
               >
-                Équipe
+                {t('nav.team')}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-studio-blue transition-all duration-300 group-hover:w-full"></span>
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
                 className="hover:text-studio-blue transition-colors duration-300 relative group"
               >
-                Nous joindre
+                {t('nav.contact')}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-studio-blue transition-all duration-300 group-hover:w-full"></span>
+              </button>
+              
+              {/* Language Toggle */}
+              <button
+                onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+                className="flex items-center space-x-1 hover:text-studio-blue transition-colors duration-300 relative group"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm font-medium">{t('lang.toggle')}</span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-studio-blue transition-all duration-300 group-hover:w-full"></span>
               </button>
             </div>
@@ -92,19 +104,28 @@ export default function Navigation() {
               onClick={() => scrollToSection("services")}
               className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
             >
-              Vision
+              {t('nav.vision')}
             </button>
             <button
               onClick={() => scrollToSection("team")}
               className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
             >
-              Équipe
+              {t('nav.team')}
             </button>
             <button
               onClick={() => scrollToSection("contact")}
               className="block w-full text-left text-lg text-white hover:text-studio-blue transition-colors duration-300"
             >
-              Nous joindre
+              {t('nav.contact')}
+            </button>
+            
+            {/* Mobile Language Toggle */}
+            <button
+              onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+              className="flex items-center space-x-2 text-lg text-white hover:text-studio-blue transition-colors duration-300"
+            >
+              <Globe className="w-5 h-5" />
+              <span>{t('lang.toggle')}</span>
             </button>
           </div>
         </div>

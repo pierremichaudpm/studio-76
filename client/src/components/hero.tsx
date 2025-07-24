@@ -1,7 +1,9 @@
 import studioLogoPath from "@assets/studio76-Logo_1753218097982.png";
 import cyclingEventPath from "@assets/Corpo - GPCQM - 15-09-2024 - Simon Laroche - Montréal_WEB-719_1753362028332.jpg";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Hero() {
+  const { t } = useLanguage();
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -29,11 +31,10 @@ export default function Hero() {
         {/* Tagline */}
         <div className="space-y-4 animate-fade-in-up animation-delay-300">
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-light tracking-wide">
-            <span className="block mb-2">Créer.</span>
-            <span className="block mb-2 text-studio-blue">Captiver.</span>
-            <span className="block">Connecter.</span>
+            <span className="block mb-2">{t('hero.create')}</span>
+            <span className="block mb-2 text-studio-blue">{t('hero.captivate')}</span>
+            <span className="block">{t('hero.connect')}</span>
           </h1>
-
         </div>
       </div>
 

@@ -1,27 +1,26 @@
 import { Film, Radio, Users } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Services() {
+  const { t } = useLanguage();
   const services = [
     {
       icon: Film,
-      title: "Créer.",
-      subtitle: "Production de séries documentaires",
-      description:
-        "Nous créons des séries documentaires qui plongent au cœur de récits humains puissants, faits d'émotions, de défis et de moments marquants.",
+      title: t('hero.create'),
+      subtitle: t('vision.documentary.title'),
+      description: t('vision.documentary.desc'),
     },
     {
       icon: Radio,
-      title: "Captiver.",
-      subtitle: "Captation en direct d'événements sportifs",
-      description:
-        "Nous mettons notre expertise technique et narrative au service de la diffusion en direct d'événements majeurs, pour faire vivre l'intensité du moment à chaque spectateur.",
+      title: t('hero.captivate'),
+      subtitle: t('vision.sports.title'),
+      description: t('vision.sports.desc'),
     },
     {
       icon: Users,
-      title: "Connecter.",
-      subtitle: "Projets de créativité média avec des marques",
-      description:
-        "Nous collaborons avec des partenaires pour créer du contenu vidéo innovant, authentique et engageant, qui rapproche les marques de leurs publics.",
+      title: t('hero.connect'),
+      subtitle: t('vision.brand.title'),
+      description: t('vision.brand.desc'),
     },
   ];
 
@@ -30,7 +29,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light mb-6">
-            Notre <span className="text-studio-blue">Vision</span>
+            Notre <span className="text-studio-blue">{t('vision.title.highlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-studio-blue to-blue-600 mx-auto"></div>
         </div>

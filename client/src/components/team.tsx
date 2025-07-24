@@ -1,22 +1,24 @@
 import { User } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Team() {
+  const { t } = useLanguage();
   const teamMembers = [
     {
-      name: "Sébastien Arsenault",
-      title: "Président",
+      name: t('team.sebastien.name'),
+      title: t('team.sebastien.title'),
       bio: [
-        "Sébastien cumule plus de 20 ans d'expérience en production télévisuelle et en gestion de chaînes spécialisées. À la tête de Serdy Média, il a supervisé la production de centaines d'heures de contenu original, notamment pour les chaînes Évasion et Zeste, qu'il a dirigées à titre de président.",
-        "Visionnaire, il a piloté le lancement de Zeste en 2010, élargissant l'offre télévisuelle culinaire au Québec avec une programmation originale et distinctive.",
-        "Depuis 2010, il dirige également la production télévisuelle en direct des Grands Prix Cyclistes de Québec et de Montréal, assurant une diffusion de calibre international de ces épreuves du UCI WorldTour. Fort de son expertise en captation en direct, en storytelling visuel et en développement de contenu, Sébastien apporte au studio une approche stratégique ancrée dans l'innovation et la qualité de production.",
+        t('team.sebastien.bio1'),
+        t('team.sebastien.bio2'),
+        t('team.sebastien.bio3'),
       ],
     },
     {
-      name: "Catherine Dupont",
-      title: "Vice-présidente directrice générale",
+      name: t('team.catherine.name'),
+      title: t('team.catherine.title'),
       bio: [
-        "Catherine est une productrice chevronnée qui cumule plus de 35 ans d'expérience dans les secteurs télévisuel, documentaire et événementiel. Elle a dirigé des chaînes spécialisées comme Évasion et Zeste, supervisé la production de séries originales saluées par l'industrie et piloté la couverture olympique multiplateforme de Radio-Canada.",
-        "Aujourd'hui à la tête de Studio 76, elle met son expertise en production de séries documentaires, captation d'événements sportifs et projets de contenu de marque au service de partenaires à la recherche d'un récit fort, captivant et bien exécuté.",
+        t('team.catherine.bio1'),
+        t('team.catherine.bio2'),
       ],
     },
   ];
@@ -26,7 +28,7 @@ export default function Team() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light mb-6">
-            Notre <span className="text-studio-blue">Équipe</span>
+            {t('team.title').split(' ')[0]} <span className="text-studio-blue">{t('team.title.highlight')}</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-studio-blue to-blue-600 mx-auto"></div>
         </div>
