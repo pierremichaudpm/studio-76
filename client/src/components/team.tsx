@@ -1,6 +1,6 @@
 import { User } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import sebastienPhoto from "@assets/SEBASTIEN_1753364072922.webp";
+import sebastienPhoto from "@assets/Sébastien ARSENAULT - Président (1)_1753885400931.jpg";
 import catherinePhoto from "@assets/catherine_1753364072922.jpeg";
 
 export default function Team() {

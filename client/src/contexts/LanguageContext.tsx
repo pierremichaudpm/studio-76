@@ -48,7 +48,7 @@ const translations = {
     
     // Contact
     'contact.title': 'Contactez-nous',
-    'contact.email': 'info@studio76.ca',
+    'contact.email': 'info@groupetonic.ca',
     
     // Language toggle
     'lang.toggle': 'EN',
@@ -90,7 +90,7 @@ const translations = {
     
     // Contact
     'contact.title': 'Contact Us',
-    'contact.email': 'info@studio76.ca',
+    'contact.email': 'info@groupetonic.ca',
     
     // Language toggle
     'lang.toggle': 'FR',
