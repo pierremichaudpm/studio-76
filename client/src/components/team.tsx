@@ -54,7 +54,7 @@ export default function Team() {
                   style={{
                     transform: member.name.includes('Catherine') 
                       ? 'scale(1.15) translateX(6px) translateY(2px)' 
-                      : 'scale(1.2) translateY(6px) translateX(-3px)'
+                      : 'scale(1.2) translateY(6px) translateX(-8px)'
                   }}
                 />
               </div>
