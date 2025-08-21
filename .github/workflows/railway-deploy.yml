@@ -3,6 +3,7 @@ name: Deploy to Railway
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch:
 
 concurrency:
   group: railway-deploy-${{ github.ref }}
@@ -20,12 +21,32 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Deploy with Railway
+      - name: Debug Railway token and project access
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          set -euo pipefail
+          npx -y @railway/cli login --token "$RAILWAY_TOKEN"
+          npx -y @railway/cli whoami || true
+          npx -y @railway/cli project list || true
+
+      - name: Link Railway project/service
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
           RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+          RAILWAY_ENVIRONMENT_ID: ${{ secrets.RAILWAY_ENVIRONMENT_ID }}
         run: |
+          set -euo pipefail
           npx -y @railway/cli login --token "$RAILWAY_TOKEN"
-          npx -y @railway/cli link --project "$RAILWAY_PROJECT_ID" --service "$RAILWAY_SERVICE_ID"
+          EXTRA_ENV=""
+          if [ -n "${RAILWAY_ENVIRONMENT_ID:-}" ]; then EXTRA_ENV="--environment ${RAILWAY_ENVIRONMENT_ID}"; fi
+          npx -y @railway/cli link --project "$RAILWAY_PROJECT_ID" --service "$RAILWAY_SERVICE_ID" $EXTRA_ENV
+
+      - name: Deploy (railway up)
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          set -euo pipefail
+          npx -y @railway/cli login --token "$RAILWAY_TOKEN"
           npx -y @railway/cli up --yes
